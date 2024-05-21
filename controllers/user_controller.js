@@ -1,14 +1,14 @@
 const {
-  getCategotyDetails,
-  addcategory,
-  getCategoryById,
-  updateCategory,
-  deleteCategory,
-} = require("../models/repositry/category.repositry");
+  getUserDetails,
+  addUserDetails,
+  getUserDetailsById,
+  updateUserDetails,
+  deleteUserDetails,
+} = require("../models/repositry/user.repositry");
 const { errorHandle } = require("../utils/ErrorFiles/errorHandler");
 
-exports.getCategoryDetail = (req, res) => {
-  getCategotyDetails()
+exports.getUserDatas = (req, res) => {
+  getUserDetails()
     .then((data) => {
       res.send(data);
     })
@@ -18,25 +18,9 @@ exports.getCategoryDetail = (req, res) => {
     });
 };
 
-exports.addCategoryDetail = (req, res) => {
-  const cData = {
-    title: req.body.title,
-    category_desc: req.body.desc,
-  };
-  addcategory(cData)
-    .then((data) => {
-      console.log(data);
-      res.send(data);
-    })
-    .catch((err) => {
-      errorHandle(err);
-      res.send("internal server error");
-    });
-};
-
-exports.getCategoryDataById = (req, res) => {
-  // console.log(req.params.categeoryid)
-  getCategoryById(req.params.cid)
+exports.addUserData = (req, res) => {
+  const userDetails = req.body;
+  addUserDetails(userDetails)
     .then((data) => {
       res.send(data);
     })
@@ -46,13 +30,8 @@ exports.getCategoryDataById = (req, res) => {
     });
 };
 
-exports.updateCategoryDetail = (req, res) => {
-  const cateData = {
-    title: req.body.title,
-    category_desc: req.body.desc,
-    id: req.body.cid,
-  };
-  updateCategory(cateData)
+exports.getUserDataById = (req, res) => {
+  getUserDetailsById(req.params.uid)
     .then((data) => {
       res.send(data);
     })
@@ -62,8 +41,20 @@ exports.updateCategoryDetail = (req, res) => {
     });
 };
 
-exports.deleteCategoryDetail = (req, res) => {
-  deleteCategory(req.params.cid)
+exports.updateUserData = (req, res) => {
+  const userdata = req.body;
+  updateUserDetails(userdata, req.body.userId)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      errorHandle(err);
+      res.send("internal server error");
+    });
+};
+
+exports.deleteUserData = (req, res) => {
+  deleteUserDetails(req.params.uid)
     .then((data) => {
       res.send([data]);
     })

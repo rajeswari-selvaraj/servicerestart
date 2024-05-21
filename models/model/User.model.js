@@ -22,6 +22,18 @@ const User = sequelize.define('user',{
         type:DataTypes.BIGINT,
         allowNull:false,
         unique:true
+    },
+    password:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    isEmailVerified:{
+        type:DataTypes.BOOLEAN,
+        defaultValue:false
+    },
+    isMobVerified:{
+        type:DataTypes.BOOLEAN,
+        defaultValue:false
     }
 },{tableName:'Users'});
 
