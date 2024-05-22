@@ -20,7 +20,7 @@ sequelize
   // .sync({alter:true})
   .sync()
   .then((result) => {
-    console.log("result");
+    console.log("db connected");
   })
   .catch((error) => {
     errorHandle(error);

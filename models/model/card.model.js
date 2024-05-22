@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../../configuration/dbconfig");
-const user = require("../model/User.model");
+const User = require("../model/User.model");
 
 const card = sequelize.define(
   "card",
@@ -33,6 +33,6 @@ const card = sequelize.define(
   { tableName: "cards" }
 );
 
-card.belongsTo(user);
+card.belongsTo(User);
 
 module.exports = card;

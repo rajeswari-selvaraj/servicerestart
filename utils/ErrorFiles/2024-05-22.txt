@@ -1,0 +1,30 @@
+Wed May 22 2024 10:47:30 GMT+0530 (India Standard Time)
+Error: Invalid greeting. response=421 Cannot connect to SMTP server 142.251.42.101 (142.251.42.101:587), connect error 10060: 421 Cannot connect to SMTP server 142.251.42.101 (142.251.42.101:587), connect error 10060
+Wed May 22 2024 10:49:51 GMT+0530 (India Standard Time)
+Error: self-signed certificate in certificate chain
+Wed May 22 2024 10:50:53 GMT+0530 (India Standard Time)
+Error: Missing credentials for "PLAIN"
+Wed May 22 2024 10:57:41 GMT+0530 (India Standard Time)
+Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-1f306dd2f1fsm38721315ad.282 - gsmtp
+Wed May 22 2024 10:58:01 GMT+0530 (India Standard Time)
+Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-65c94120e70sm8940990a12.90 - gsmtp
+Wed May 22 2024 11:08:47 GMT+0530 (India Standard Time)
+Error: Invalid login: 534-5.7.9 Application-specific password required. For more information, go to
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor d2e1a72fcca58-6f4d2b255a0sm21635880b3a.198 - gsmtp
+Wed May 22 2024 11:09:11 GMT+0530 (India Standard Time)
+Error: self-signed certificate in certificate chain
+Wed May 22 2024 11:09:18 GMT+0530 (India Standard Time)
+Error: Invalid login: 534-5.7.9 Application-specific password required. For more information, go to
+534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor 41be03b00d2f7-63560731046sm18490148a12.67 - gsmtp
+Wed May 22 2024 11:26:27 GMT+0530 (India Standard Time)
+Error: Missing credentials for "PLAIN"
+Wed May 22 2024 11:27:31 GMT+0530 (India Standard Time)
+Error: Missing credentials for "PLAIN"
+Wed May 22 2024 11:28:25 GMT+0530 (India Standard Time)
+Error: Missing credentials for "PLAIN"
+Wed May 22 2024 11:38:41 GMT+0530 (India Standard Time)
+TypeError: Cannot read properties of undefined (reading 'then')
+Wed May 22 2024 13:28:20 GMT+0530 (India Standard Time)
+SequelizeUniqueConstraintError: Validation error

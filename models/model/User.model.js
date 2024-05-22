@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../../configuration/dbconfig");
+// const card = require("./card.model");
 
 const User = sequelize.define('user',{
     id:{
@@ -36,5 +37,7 @@ const User = sequelize.define('user',{
         defaultValue:false
     }
 },{tableName:'Users'});
+
+// User.hasOne(card);
 
 module.exports = User;

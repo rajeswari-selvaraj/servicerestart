@@ -1,11 +1,15 @@
+require("dotenv").config;
+const verificationPath = process.env.verification_Path;
 const {
   getUserDetails,
   addUserDetails,
   getUserDetailsById,
   updateUserDetails,
   deleteUserDetails,
+  emailVerification,
 } = require("../models/repositry/user.repositry");
 const { errorHandle } = require("../utils/ErrorFiles/errorHandler");
+const { sendMail } = require("../utils/verificationMail");
 
 exports.getUserDatas = (req, res) => {
   getUserDetails()
@@ -22,7 +26,12 @@ exports.addUserData = (req, res) => {
   const userDetails = req.body;
   addUserDetails(userDetails)
     .then((data) => {
-      res.send(data);
+      //console.log(data.dataValues.id);
+      const msg = verificationPath+data.dataValues.id;
+
+      let mailres = sendMail(req.body.Mail, msg);
+      res.send({ ...data, mailres });
+      // res.send(data);
     })
     .catch((err) => {
       errorHandle(err);
@@ -57,6 +66,17 @@ exports.deleteUserData = (req, res) => {
   deleteUserDetails(req.params.uid)
     .then((data) => {
       res.send([data]);
+    })
+    .catch((err) => {
+      errorHandle(err);
+      res.send("internal server error");
+    });
+};
+
+exports.emailverification = (req, res) => {
+  emailVerification(req.params.uid)
+    .then(() => {
+      res.send("Your email verified successfully...");
     })
     .catch((err) => {
       errorHandle(err);

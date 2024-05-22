@@ -19,3 +19,8 @@ exports.updateUserDetails = (userUdData, userId) => {
 exports.deleteUserDetails = (userId) => {
   return user.destroy({ where: { id: userId } });
 };
+
+exports.emailVerification = (userId) => {
+  // return user.update(userUdData, { where: { id: userId } });
+  return user.update({isEmailVerified:true}, { where: { id: userId } });
+};
